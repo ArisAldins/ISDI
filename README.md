@@ -8,26 +8,47 @@ OS : Ubuntu
 ```
 sudo apt-get update
 sudo apt-get install gnupg
-
 ```
 
-## CMD uzstāda vajadzīgās python versijas
+## Uzģenerē savu GPG atslēgu pāri
 ```
-C:\Windows\System32>pyenv install 3.11.5
-:: [Info] ::  Mirror: https://www.python.org/ftp/python
-:: [Downloading] ::  3.11.5 ...
-:: [Downloading] ::  From https://www.python.org/ftp/python/3.11.5/python-3.11.5-amd64.exe
-:: [Downloading] ::  To   C:\Users\Lektors\.pyenv\pyenv-win\install_cache\python-3.11.5-amd64.exe
-:: [Installing] ::  3.11.5 ...
-:: [Info] :: completed! 3.11.5
+gpg --full-generate-key
+```
 
-C:\Windows\System32>pyenv install 2.7.2
-:: [Info] ::  Mirror: https://www.python.org/ftp/python
-:: [Downloading] ::  2.7.2 ...
-:: [Downloading] ::  From https://www.python.org/ftp/python/2.7.2/python-2.7.2.amd64.msi
-:: [Downloading] ::  To   C:\Users\Lektors\.pyenv\pyenv-win\install_cache\python-2.7.2.amd64.msi
-:: [Installing] ::  2.7.2 ...
-:: [Info] :: completed! 2.7.2
+```
+Please select what kind of key you want:
+   (1) RSA and RSA (default)
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+Your selection? 1
+
+RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (3072) 4096
+
+Please specify how long the key should be valid.
+        0 = key does not expire
+     <n>  = key expires in n days
+     <n>w = key expires in n weeks
+     <n>m = key expires in n months
+     <n>y = key expires in n years
+Key is valid for? 1y
+Key expires at [date 12 months from today]
+Is this correct? (y/N) y
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: Aris Aldins
+Email address: aris.aldins@gmail.com
+Comment: 
+You selected this USER-ID:
+    "Aris Aldins <aris.aldins@gmail.com>"
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
+You need a Passphrase to protect your secret key.
+
+Enter passphrase:
+Repeat passphrase:
 ```
 
 ## Apskata uzstādītās versijas

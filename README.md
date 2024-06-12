@@ -86,9 +86,16 @@ gpg --output message_decrypted.txt --decrypt message.txt.gpg
 
 # EXERCISE 2 - Harden SSH Security
 
-## Uzstāda virtualenv
+## Konfigurē Timeout Interval
 ```
-123
+sudo nano /etc/ssh/sshd_config
+```
+```
+ClientAliveInterval 300
+ClientAliveCountMax 0
+```
+```
+sudo systemctl restart sshd
 ```
 
 

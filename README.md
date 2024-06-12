@@ -155,6 +155,11 @@ sudo nano /etc/ssh/sshd_config
 ```
 ```
 PasswordAuthentication no
+ChallengeResponseAuthentication no
+UsePAM no
+```
+```
+PubkeyAuthentication yes
 ```
 ```
 sudo systemctl restart sshd
@@ -224,7 +229,7 @@ sudo systemctl start netfilter-persistent
 
 # EXERCISE 3 - Explore SMTP Vulnerabilities
 
-## Uzstāda virtualenv
+## risinajums 1
 ```
 123
 ```
@@ -232,7 +237,7 @@ sudo systemctl start netfilter-persistent
 
 # EXERCISE 4 - Network Tunnels (using Netcat)
 
-## Uzstāda virtualenv
+## risinajums 1
 ```
 123
 ```

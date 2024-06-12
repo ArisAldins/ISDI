@@ -1,4 +1,4 @@
-# ViA KI1 Informācijas sistēmu drošības inženierija (ISDI)
+# ViA | KI1 | Informācijas sistēmu drošības inženierija (ISDI)
 
 # EXERCISE 1
 

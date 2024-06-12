@@ -58,26 +58,14 @@ gpg: revocation certificate stored as '/home/username/.gnupg/openpgp-revocs.d/AB
 public and secret key created and signed.
 ```
 
-## Apskata uzstādītās versijas
+## Eksportē publisko atslēgu un dalās ar personu/-ām, starp kurām to izmantos
 ```
-C:\Windows\System32>python3 --version
-Python 3.11.5
-
-C:\Windows\System32>python --version
-Python 2.7.2
+gpg --export -a "Aris Aldins" > public_key.asc
 ```
 
-## Maina versijas
+## Importē publisko atslēgu no personas, ar kuru sazināsies
 ```
-C:\Windows\System32>pyenv global 2.7.2
-
-C:\Windows\System32>pyenv version
-2.7.2 (set by C:\Users\Lektors\.pyenv\pyenv-win\version)
-
-C:\Windows\System32>pyenv global 3.11.5
-
-C:\Windows\System32>pyenv version
-3.11.5 (set by C:\Users\Lektors\.pyenv\pyenv-win\version)
+gpg --import otra_public_key.asc
 ```
 
 

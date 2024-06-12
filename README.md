@@ -109,6 +109,118 @@ AllowUsers userA userB userC userD
 sudo systemctl restart sshd
 ```
 
+## 3. Atslēdz Root loginu
+```
+sudo nano /etc/ssh/sshd_config
+```
+```
+PermitRootLogin no
+```
+```
+sudo systemctl restart sshd
+```
+
+## 4. Konfigurē SSHd uz izvēlēta porta - 2222, atļauj to firewallā
+```
+sudo nano /etc/ssh/sshd_config
+```
+```
+Port 2222
+```
+```
+sudo ufw allow 2222/tcp
+```
+```
+sudo systemctl restart sshd
+```
+
+## 5. Izveido Public/Private Keys priekš autentifikācijas
+```
+ssh-keygen -t rsa -b 4096 -C "aris.aldins@gmail.com"
+
+```
+```
+ssh-copy-id -i ~/.ssh/id_rsa.pub aris@95.68.18.10
+
+```
+```
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+```
+
+
+## 6. Izslēdz autentifikāciju ar parolēm, piespiežot izmantot atslēgas
+```
+sudo nano /etc/ssh/sshd_config
+```
+```
+PasswordAuthentication no
+```
+```
+sudo systemctl restart sshd
+```
+
+
+## 7. Uzstāda 2FA ar Google Authenticator PAM 
+```
+sudo apt-get install libpam-google-authenticator
+```
+```
+google-authenticator
+```
+```
+sudo nano /etc/pam.d/sshd
+```
+```
+auth required pam_google_authenticator.so
+```
+```
+sudo nano /etc/ssh/sshd_config
+```
+```
+ChallengeResponseAuthentication yes
+```
+```
+sudo systemctl restart sshd
+```
+
+
+## 8. Bloķē IP pēc 3 neveiksmīgiem autentifikācijas mēģinājumiem izmantojot iptables
+```
+sudo apt-get update
+sudo apt-get install iptables iptables-persistent
+```
+```
+sudo nano /usr/local/bin/ssh-block.sh
+```
+```
+#!/bin/bash
+
+iptables -F
+iptables -X
+
+iptables -N SSH_CHECK
+
+iptables -A INPUT -p tcp --dport 22 -m state --state NEW -j SSH_CHECK
+
+iptables -A SSH_CHECK -m recent --name sshattack --update --seconds 60 --hitcount 3 -j LOG --log-prefix "SSH brute force attempt: "
+iptables -A SSH_CHECK -m recent --name sshattack --update --seconds 60 --hitcount 3 -j DROP
+
+iptables -A SSH_CHECK -m recent --name sshattack --set -j ACCEPT
+```
+```
+sudo chmod +x /usr/local/bin/ssh-block.sh
+```
+```
+sudo /usr/local/bin/ssh-block.sh
+```
+```
+sudo sh -c "iptables-save > /etc/iptables/rules.v4"
+```
+```
+sudo systemctl enable netfilter-persistent
+sudo systemctl start netfilter-persistent
+```
 
 # EXERCISE 3 - Explore SMTP Vulnerabilities
 

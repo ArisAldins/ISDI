@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt-get install gnupg
 ```
 
-## Uzģenerē savu GPG atslēgu pāri
+## Uzģenerē un nokonfigurē savu GPG atslēgu pāri
 ```
 gpg --full-generate-key
 ```

@@ -68,32 +68,27 @@ gpg --export -a "Aris Aldins" > public_key.asc
 gpg --import otra_public_key.asc
 ```
 
+## Izveido teksta ziņu un šifrē to ar otra publisko atslēgu
+```
+echo "Cau, si ir svariga zina!" > message.txt
+```
+
+```
+gpg --output message.txt.gpg --encrypt --recipient aris.aldins@va.lv message.txt
+```
+
+## Atšifrē ziņu ar privāto atslēgu
+```
+gpg --output message_decrypted.txt --decrypt message.txt.gpg
+
+```
+
 
 # EXERCISE 2 - Harden SSH Security
 
 ## Uzstāda virtualenv
 ```
-C:\Windows\System32>pip install virtualenv
-Collecting virtualenv
-  Obtaining dependency information for virtualenv from https://files.pythonhosted.org/packages/4e/8b/f0d3a468c0186c603217a6656ea4f49259630e8ed99558501d92f6ff7dc3/virtualenv-20.24.5-py3-none-any.whl.metadata
-  Downloading virtualenv-20.24.5-py3-none-any.whl.metadata (4.5 kB)
-Collecting distlib<1,>=0.3.7 (from virtualenv)
-  Obtaining dependency information for distlib<1,>=0.3.7 from https://files.pythonhosted.org/packages/43/a0/9ba967fdbd55293bacfc1507f58e316f740a3b231fc00e3d86dc39bc185a/distlib-0.3.7-py2.py3-none-any.whl.metadata
-  Downloading distlib-0.3.7-py2.py3-none-any.whl.metadata (5.1 kB)
-Collecting filelock<4,>=3.12.2 (from virtualenv)
-  Obtaining dependency information for filelock<4,>=3.12.2 from https://files.pythonhosted.org/packages/5e/5d/97afbafd9d584ff1b45fcb354a479a3609bd97f912f8f1f6c563cb1fae21/filelock-3.12.4-py3-none-any.whl.metadata
-  Downloading filelock-3.12.4-py3-none-any.whl.metadata (2.8 kB)
-Collecting platformdirs<4,>=3.9.1 (from virtualenv)
-  Obtaining dependency information for platformdirs<4,>=3.9.1 from https://files.pythonhosted.org/packages/14/51/fe5a0d6ea589f0d4a1b97824fb518962ad48b27cd346dcdfa2405187997a/platformdirs-3.10.0-py3-none-any.whl.metadata
-  Downloading platformdirs-3.10.0-py3-none-any.whl.metadata (11 kB)
-Downloading virtualenv-20.24.5-py3-none-any.whl (3.7 MB)
-   ---------------------------------------- 3.7/3.7 MB 12.0 MB/s eta 0:00:00
-Downloading distlib-0.3.7-py2.py3-none-any.whl (468 kB)
-   ---------------------------------------- 468.9/468.9 kB 28.7 MB/s eta 0:00:00
-Downloading filelock-3.12.4-py3-none-any.whl (11 kB)
-Downloading platformdirs-3.10.0-py3-none-any.whl (17 kB)
-Installing collected packages: distlib, platformdirs, filelock, virtualenv
-Successfully installed distlib-0.3.7 filelock-3.12.4 platformdirs-3.10.0 virtualenv-20.24.5
+123
 ```
 
 
@@ -101,53 +96,14 @@ Successfully installed distlib-0.3.7 filelock-3.12.4 platformdirs-3.10.0 virtual
 
 ## Uzstāda virtualenv
 ```
-C:\Windows\System32>pip install virtualenv
-Collecting virtualenv
-  Obtaining dependency information for virtualenv from https://files.pythonhosted.org/packages/4e/8b/f0d3a468c0186c603217a6656ea4f49259630e8ed99558501d92f6ff7dc3/virtualenv-20.24.5-py3-none-any.whl.metadata
-  Downloading virtualenv-20.24.5-py3-none-any.whl.metadata (4.5 kB)
-Collecting distlib<1,>=0.3.7 (from virtualenv)
-  Obtaining dependency information for distlib<1,>=0.3.7 from https://files.pythonhosted.org/packages/43/a0/9ba967fdbd55293bacfc1507f58e316f740a3b231fc00e3d86dc39bc185a/distlib-0.3.7-py2.py3-none-any.whl.metadata
-  Downloading distlib-0.3.7-py2.py3-none-any.whl.metadata (5.1 kB)
-Collecting filelock<4,>=3.12.2 (from virtualenv)
-  Obtaining dependency information for filelock<4,>=3.12.2 from https://files.pythonhosted.org/packages/5e/5d/97afbafd9d584ff1b45fcb354a479a3609bd97f912f8f1f6c563cb1fae21/filelock-3.12.4-py3-none-any.whl.metadata
-  Downloading filelock-3.12.4-py3-none-any.whl.metadata (2.8 kB)
-Collecting platformdirs<4,>=3.9.1 (from virtualenv)
-  Obtaining dependency information for platformdirs<4,>=3.9.1 from https://files.pythonhosted.org/packages/14/51/fe5a0d6ea589f0d4a1b97824fb518962ad48b27cd346dcdfa2405187997a/platformdirs-3.10.0-py3-none-any.whl.metadata
-  Downloading platformdirs-3.10.0-py3-none-any.whl.metadata (11 kB)
-Downloading virtualenv-20.24.5-py3-none-any.whl (3.7 MB)
-   ---------------------------------------- 3.7/3.7 MB 12.0 MB/s eta 0:00:00
-Downloading distlib-0.3.7-py2.py3-none-any.whl (468 kB)
-   ---------------------------------------- 468.9/468.9 kB 28.7 MB/s eta 0:00:00
-Downloading filelock-3.12.4-py3-none-any.whl (11 kB)
-Downloading platformdirs-3.10.0-py3-none-any.whl (17 kB)
-Installing collected packages: distlib, platformdirs, filelock, virtualenv
-Successfully installed distlib-0.3.7 filelock-3.12.4 platformdirs-3.10.0 virtualenv-20.24.5
+123
 ```
+
 
 # EXERCISE 4 - Network Tunnels (using Netcat)
 
 ## Uzstāda virtualenv
 ```
-C:\Windows\System32>pip install virtualenv
-Collecting virtualenv
-  Obtaining dependency information for virtualenv from https://files.pythonhosted.org/packages/4e/8b/f0d3a468c0186c603217a6656ea4f49259630e8ed99558501d92f6ff7dc3/virtualenv-20.24.5-py3-none-any.whl.metadata
-  Downloading virtualenv-20.24.5-py3-none-any.whl.metadata (4.5 kB)
-Collecting distlib<1,>=0.3.7 (from virtualenv)
-  Obtaining dependency information for distlib<1,>=0.3.7 from https://files.pythonhosted.org/packages/43/a0/9ba967fdbd55293bacfc1507f58e316f740a3b231fc00e3d86dc39bc185a/distlib-0.3.7-py2.py3-none-any.whl.metadata
-  Downloading distlib-0.3.7-py2.py3-none-any.whl.metadata (5.1 kB)
-Collecting filelock<4,>=3.12.2 (from virtualenv)
-  Obtaining dependency information for filelock<4,>=3.12.2 from https://files.pythonhosted.org/packages/5e/5d/97afbafd9d584ff1b45fcb354a479a3609bd97f912f8f1f6c563cb1fae21/filelock-3.12.4-py3-none-any.whl.metadata
-  Downloading filelock-3.12.4-py3-none-any.whl.metadata (2.8 kB)
-Collecting platformdirs<4,>=3.9.1 (from virtualenv)
-  Obtaining dependency information for platformdirs<4,>=3.9.1 from https://files.pythonhosted.org/packages/14/51/fe5a0d6ea589f0d4a1b97824fb518962ad48b27cd346dcdfa2405187997a/platformdirs-3.10.0-py3-none-any.whl.metadata
-  Downloading platformdirs-3.10.0-py3-none-any.whl.metadata (11 kB)
-Downloading virtualenv-20.24.5-py3-none-any.whl (3.7 MB)
-   ---------------------------------------- 3.7/3.7 MB 12.0 MB/s eta 0:00:00
-Downloading distlib-0.3.7-py2.py3-none-any.whl (468 kB)
-   ---------------------------------------- 468.9/468.9 kB 28.7 MB/s eta 0:00:00
-Downloading filelock-3.12.4-py3-none-any.whl (11 kB)
-Downloading platformdirs-3.10.0-py3-none-any.whl (17 kB)
-Installing collected packages: distlib, platformdirs, filelock, virtualenv
-Successfully installed distlib-0.3.7 filelock-3.12.4 platformdirs-3.10.0 virtualenv-20.24.5
+123
 ```
 

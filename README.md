@@ -51,6 +51,13 @@ Enter passphrase:
 Repeat passphrase:
 ```
 
+```
+gpg: key ABCD1234 marked as ultimately trusted
+gpg: directory '/home/username/.gnupg/openpgp-revocs.d' created
+gpg: revocation certificate stored as '/home/username/.gnupg/openpgp-revocs.d/ABCD1234.rev'
+public and secret key created and signed.
+```
+
 ## Apskata uzstādītās versijas
 ```
 C:\Windows\System32>python3 --version

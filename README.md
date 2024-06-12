@@ -86,13 +86,24 @@ gpg --output message_decrypted.txt --decrypt message.txt.gpg
 
 # EXERCISE 2 - Harden SSH Security
 
-## Konfigurē Timeout Interval
+## 1. Konfigurē Timeout Interval
 ```
 sudo nano /etc/ssh/sshd_config
 ```
 ```
 ClientAliveInterval 300
 ClientAliveCountMax 0
+```
+```
+sudo systemctl restart sshd
+```
+
+## 2. Limitē SSH pieeju tikai Whitelist lietotājiem
+```
+sudo nano /etc/ssh/sshd_config
+```
+```
+AllowUsers userA userB userC userD
 ```
 ```
 sudo systemctl restart sshd

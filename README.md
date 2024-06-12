@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt-get install gnupg
 ```
 
-## Uzģenerē un nokonfigurē savu GPG atslēgu pāri (aris.aldins@gmail.com)
+## Uzģenerē un nokonfigurē savu GPG atslēgu pāri - aris.aldins@gmail.com
 ```
 gpg --full-generate-key
 ```
@@ -63,7 +63,7 @@ public and secret key created and signed.
 gpg --export -a "Aris Aldins" > public_key.asc
 ```
 
-## Importē publisko atslēgu no personas, ar kuru sazināsies (aris.aldins@va.lv)
+## Importē publisko atslēgu no personas, ar kuru sazināsies - aris.aldins@va.lv
 ```
 gpg --import otra_public_key.asc
 ```

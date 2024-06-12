@@ -77,7 +77,7 @@ echo "Cau, si ir svariga zina!" > message.txt
 gpg --output message.txt.gpg --encrypt --recipient aris.aldins@va.lv message.txt
 ```
 
-## Atšifrē ziņu ar privāto atslēgu
+## Atšifrē saņemto ziņu ar privāto atslēgu
 ```
 gpg --output message_decrypted.txt --decrypt message.txt.gpg
 

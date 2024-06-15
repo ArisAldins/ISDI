@@ -237,8 +237,41 @@ sudo systemctl start netfilter-persistent
 
 # EXERCISE 4 - Network Tunnels (using Netcat)
 
-## risinajums 1
+## 1. Tunelis no Windows uz Linux
 ```
 123
 ```
+
+## 2. Tunelis no Linux uz Windows
+```
+123
+```
+## 3.1. Ziņu apmaiņa
+```
+123
+```
+## 3.2. Faila pārsūtīšana
+```
+123
+```
+## 3.3. Attālināta administrēšana
+```
+123
+```
+## 3.4. Pieslēgšanās hostam aiz NAT
+```
+123
+```
+## 3.5. Spawn a reverse shell without Netcat
+```
+123
+```
+## 3.6. Spawn a reverse shell without Netcat
+```
+123
+```
+
+
+
+
 

@@ -235,7 +235,7 @@ sudo systemctl start netfilter-persistent
 ###  Ieviest SPF (Sender Policy Framework)
 ######  SPF pārbauda, vai ienākošie e-pasta ziņojumi ir nosūtīti no pilnvarotiem pasta serveriem.
 
-###  Ieviest uzlaboto e-pasta filtrēšanu
+###  Uzlabot e-pasta filtrēšanu
 ######  Izmanto e-pasta filtrēšanas risinājumus, lai atklātu un bloķētu viltotus e-pastus, pirms tie nonāk pie lietotājiem.
 
 ###  Monitorēt epasta Headerus and Logus

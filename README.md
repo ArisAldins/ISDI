@@ -239,8 +239,21 @@ sudo systemctl start netfilter-persistent
 
 ## 1. Tunelis no Windows uz Linux
 ### Ielādē un uzstāda Netcat uz Win, direktorijā C:\netcat
+### Uzstāda Netcat uz Linux
 ```
-123
+sudo apt-get install netcat
+```
+### Palaiž Netcat listener uz Linux specifiskam portam (5000)
+```
+nc -l -p 5000
+```
+### Win CMD iet uz Netcat direktoriju
+```
+cd C:\netcat
+```
+### Iniciē konekciju uz Linux hosta IP un portu
+```
+nc <95.68.18.10> 5000
 ```
 
 ## 2. Tunelis no Linux uz Windows

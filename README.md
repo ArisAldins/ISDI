@@ -344,11 +344,11 @@ mkdir /tmp/new
 nc -l -p 5000 -e /bin/bash
 ```
 ### Uztaisa port forwarding priekš NAT, kas kontrolē Linux ienākošo trafiku:
-#### Service Name: Netcat SSH
-#### External Port: 5000
-#### Internal IP Address: 192.168.1.100
-#### Internal Port: 5000
-#### Protocol: TCP 
+##### Service Name: Netcat SSH
+##### External Port: 5000
+##### Internal IP Address: 192.168.1.100
+##### Internal Port: 5000
+##### Protocol: TCP 
 
 ### Pieslēdzas no Windows hosta:
 ```

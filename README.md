@@ -253,17 +253,40 @@ cd C:\netcat
 ```
 ### Iniciē konekciju uz Linux hosta IP un portu
 ```
-nc <95.68.18.10> 5000
+nc <192.168.1.100> 5000
 ```
 
 ## 2. Tunelis no Linux uz Windows
+### Palaiž Netcat listener uz Windows specifiskam portam (5000)
 ```
-123
+cd C:\netcat
 ```
+```
+nc -l -p 5000 -v
+```
+### Iniciē konekciju uz Windows hosta IP un portu
+```
+nc <95.68.18.10> 5000
+```
+
 ## 3.1. Ziņu apmaiņa
+### Sūta ziņu no Linux
 ```
-123
+echo "Si ir svariga zina!" | nc <95.68.18.10> 5000
 ```
+### Windows saņem ziņu
+```
+Si ir svariga zina!
+```
+### Sūta ziņu no Windows
+```
+echo Si ir svariga zina! | nc <192.168.1.100> 5000
+```
+### Linux saņem ziņu
+```
+Si ir svariga zina!
+```
+
 ## 3.2. Faila pārsūtīšana
 ```
 123

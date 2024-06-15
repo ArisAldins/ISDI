@@ -338,9 +338,23 @@ mkdir /tmp/new
 ```
 
 ## 3.4. Pieslēgšanās hostam aiz NAT
+### Šajā piemērā Linux hosts (serveris) aiz NAT un Windows hosts (klients) ārpus NAT. Linux host IP: 192.168.1.100. Ārējā  NAT IP: 203.0.113.10
+### Uz Linux hosta:
 ```
-123
+nc -l -p 5000 -e /bin/bash
 ```
+### Uztaisa port forwarding priekš NAT, kas kontrolē Linux ienākošo trafiku:
+Service Name: Netcat SSH
+External Port: 5000
+Internal IP Address: 192.168.1.100
+Internal Port: 5000
+Protocol: TCP 
+
+### Pieslēdzas no Windows hosta:
+```
+nc 203.0.113.10 5000
+```
+
 ## 3.5. Spawn a reverse shell without Netcat
 ```
 123

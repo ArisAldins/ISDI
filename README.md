@@ -288,8 +288,27 @@ Si ir svariga zina!
 ```
 
 ## 3.2. Faila pārsūtīšana
+### Sūta failu no Linux
 ```
-123
+echo "Fails Linux uz Windows" > tests.txt
+nc <95.68.18.10> 5000 < tests.txt
+```
+### Windows saņem failu
+```
+cd C:\netcat
+nc -l -p 5000 > received_tests.txt
+type received_tests.txt
+```
+### Sūta failu no Windows
+```
+echo Fails Windows uz Linux > tests.txt
+cd C:\netcat
+nc <192.168.1.100> 5000 < tests.txt
+```
+### Linux saņem failu
+```
+nc -l -p 5000 > received_tests.txt
+cat received_tests.txt
 ```
 ## 3.3. Attālināta administrēšana
 ```

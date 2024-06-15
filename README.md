@@ -311,9 +311,33 @@ nc -l -p 5000 > received_tests.txt
 cat received_tests.txt
 ```
 ## 3.3. Attālināta administrēšana
+### No Windows pieslēdzas Linux, sūta komandas, kas izpildās uz Linux hosta (piem parāda direktorijas saturu, diska statusu, aktīvos procesus, tīkla konfigurāciju, tīkla statusu vai izveido jaunu direktoriju utml.)
 ```
-123
+cd C:\netcat
 ```
+```
+nc <192.168.1.100> 5000
+```
+```
+ls -l
+```
+```
+df -h
+```
+```
+ps aux
+```
+```
+ifconfig
+```
+```
+netstat -tuln
+```
+```
+mkdir /tmp/new
+
+```
+
 ## 3.4. Pieslēgšanās hostam aiz NAT
 ```
 123
